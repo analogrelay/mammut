@@ -1,0 +1,25 @@
+{
+  "name": "mammut.web",
+  "version": "0.0.0",
+  "description": "Mammut Client-Side APIs",
+  "main": "wwwroot/js/main.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "Andrew Stanton-Nurse <andrew@stanton-nurse.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.2",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.2.4",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

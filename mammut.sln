@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8DC20185-E2E0-466F-9D1A-56933F3CD91E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mammut.Web", "src\Mammut.Web\Mammut.Web.csproj", "{44CF8C2C-1044-47EE-9CC5-B4ECCE293A85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mammutctl", "src\mammutctl\mammutctl.csproj", "{E0169459-2316-4874-B9C8-F6623DCE85FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44CF8C2C-1044-47EE-9CC5-B4ECCE293A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CF8C2C-1044-47EE-9CC5-B4ECCE293A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CF8C2C-1044-47EE-9CC5-B4ECCE293A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CF8C2C-1044-47EE-9CC5-B4ECCE293A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0169459-2316-4874-B9C8-F6623DCE85FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0169459-2316-4874-B9C8-F6623DCE85FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0169459-2316-4874-B9C8-F6623DCE85FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0169459-2316-4874-B9C8-F6623DCE85FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44CF8C2C-1044-47EE-9CC5-B4ECCE293A85} = {8DC20185-E2E0-466F-9D1A-56933F3CD91E}
+		{E0169459-2316-4874-B9C8-F6623DCE85FF} = {8DC20185-E2E0-466F-9D1A-56933F3CD91E}
+	EndGlobalSection
+EndGlobal

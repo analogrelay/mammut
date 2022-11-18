@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd src/Mammut.Web
+npm i
+npm run watch

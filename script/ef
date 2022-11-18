@@ -1,0 +1,2 @@
+#!/bin/bash
+dotnet ef --project ./src/Mammut.Web/Mammut.Web.csproj "$@"
