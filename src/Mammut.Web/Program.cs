@@ -1,22 +1,31 @@
+using Auth0.AspNetCore.Authentication;
+using Mammut.Web;
 using Mammut.Web.Entities;
 using Mammut.Web.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services
-    .AddAuthentication()
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultChallengeScheme = Auth0Constants.AuthenticationScheme;
+    })
     .AddCookie(options =>
     {
-        options.LoginPath = "/account/login";
         options.AccessDeniedPath = "/account/forbidden";
-        options.LogoutPath = "/account/logout";
+        options.LoginPath = "/account/welcome";
+    })
+    .AddAuth0WebAppAuthentication(options =>
+    {
+        options.CallbackPath = "/account/callback";
+        options.Domain = builder.Configuration["Auth0:Domain"].Require();
+        options.ClientId = builder.Configuration["Auth0:ClientId"].Require();
+        options.SkipCookieMiddleware = true;
     });
 
 builder.Services.AddDbContext<MammutDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("MammutDb"));
-    options.UseSnakeCaseNamingConvention();
+    options.UseSqlite(builder.Configuration.GetConnectionString("MammutDb"));
 });
 
 // Add services to the container.
@@ -25,7 +34,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.Add(new LowercasePageRoutingConvention("handler"));
     
     options.Conventions.AuthorizeFolder("/");
-    options.Conventions.AllowAnonymousToPage("/account/login");
+    options.Conventions.AllowAnonymousToPage("/Account/Welcome");
 });
 
 var app = builder.Build();
@@ -43,6 +52,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
